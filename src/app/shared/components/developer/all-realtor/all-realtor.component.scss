@@ -1,0 +1,72 @@
+table {
+  border-collapse: collapse;
+  color: var(--tui-text-01);
+  width: 100%;
+}
+
+th {
+  border-bottom: 3px solid var(--tui-primary);
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+tr {
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background: white;
+}
+
+tr:nth-child(even) {
+  background: var(--tui-neutral-bg);
+}
+
+@media (max-width: 900px) {
+  table {
+    margin-top: 1rem;
+    th {
+      display: none;
+    }
+    tr {
+      display: block;
+      td {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        padding: 5px;
+
+        &::before {
+          content: attr(data-label);
+          font-weight: bold;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  @page :first {
+    margin: 1cm;
+  }
+  .tui-island__category {
+    display: none;
+  }
+  tui-input {
+    display: none;
+  }
+  button {
+    display: none;
+  }
+  tui-island {
+    box-shadow: none;
+    width: 100%;
+  }
+  .tui-island__title {
+    text-align: center;
+  }
+}

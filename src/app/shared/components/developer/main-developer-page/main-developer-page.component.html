@@ -1,0 +1,24 @@
+<section>
+  <nav>
+    <tui-tabs-with-more [itemsLimit]="itemsLimit">
+      <h1 tuiTab class="tui-text_h3 title tui-space_left-6 tui-space_right-10 tui-space_top-3">Панель
+        застройщика
+      </h1>
+      <a *tuiTab tuiTab routerLink='/developer' routerLinkActive [routerLinkActiveOptions]="{exact:true}">Список
+        объявлений</a>
+      <a *tuiTab tuiTab routerLink='/developer/realtors' routerLinkActive
+        [routerLinkActiveOptions]="{exact:true}">Список
+        риэлторов</a>
+      <a *tuiTab tuiTab routerLink='/developer/new-realtor' routerLinkActive
+        [routerLinkActiveOptions]="{exact:true}">Добавить
+        нового
+        риэлтора</a>
+    </tui-tabs-with-more>
+    <button tuiButton type="button" icon="tuiIconArrowRight" size="s" (click)="logout()">
+      Выйти
+    </button>
+  </nav>
+  <div class="block">
+    <router-outlet></router-outlet>
+  </div>
+</section>
