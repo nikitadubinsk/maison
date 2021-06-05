@@ -38,6 +38,11 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use("/", serveStatic(path.join(__dirname, "../dist/real-estate-agency")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/real-estate-agency/index.html"));
+});
+
 const CONFIG = {
   DB: "std_704_realestateagency",
   USERNAME: "std_704_realestateagency",
