@@ -53,7 +53,6 @@ export class AdComponent implements OnInit {
       let el2 = document.getElementById('photoMini');
       if (el2) {
         this.heightMini = el2.offsetHeight;
-        console.log(this.heightMini);
       }
     }, 1000);
   }

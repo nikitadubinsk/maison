@@ -32,7 +32,6 @@ export class AllRealtorAdsComponent implements OnInit {
     this.realtorService.ads(localStorage['realtor_id']).subscribe(
       (res) => {
         this.ads = res;
-        console.log(this.ads);
         this.loading = false;
       },
       (err) => {

@@ -1,7 +1,7 @@
 <form [formGroup]="registration">
   <p class="tui-island__category">Застройщик</p>
   <h3 class="tui-island__title">Регистрация</h3>
-  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error">
+  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error" status="error">
     {{error}}
   </tui-notification>
   <tui-input class="b-form" formControlName="name" tuiTextfieldAutocomplete="name" class="tui-space_top-2">

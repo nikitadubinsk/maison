@@ -31,7 +31,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = localStorage['user_id'];
-    console.log(document.body.clientWidth);
     document.body.clientWidth > 850
       ? (this.orientation = TuiOrientation.Horizontal)
       : (this.orientation = TuiOrientation.Vertical);

@@ -23,7 +23,6 @@ export class NewRealtorComponent {
   constructor(private developerService: DeveloperService) {}
 
   createRealtor() {
-    console.log(this.newRealtor.value);
     this.developerService.newRealtor(this.newRealtor.value).subscribe(
       (res) => {
         this.newRealtor.reset();

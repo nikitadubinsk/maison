@@ -5,10 +5,10 @@
   <h3 class="tui-island__title">
     Добавить нового риэлтора
   </h3>
-  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error">
+  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error" status="error">
     {{error}}
   </tui-notification>
-  <tui-notification class="tui-space_top-4" *ngIf="success$ | async as success">
+  <tui-notification class="tui-space_top-4" *ngIf="success$ | async as success" status="success">
     {{success}}
   </tui-notification>
   <form [formGroup]="newRealtor">

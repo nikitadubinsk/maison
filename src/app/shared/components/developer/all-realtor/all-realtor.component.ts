@@ -24,7 +24,6 @@ export class AllRealtorComponent implements OnInit {
       .realtors({ developer_id: localStorage['developer_id'] })
       .subscribe((res) => {
         this.realtors = res;
-        console.log(this.realtors);
         this.loading = false;
       });
   }

@@ -5,7 +5,7 @@
   <h3 class="tui-island__title">
     Редактировать риэлтора {{realtor.name}}
   </h3>
-  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error">
+  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error" status="error">
     {{error}}
   </tui-notification>
   <form [formGroup]="editRealtor">

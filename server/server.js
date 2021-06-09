@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = 3001;
+const PORT = 3002;
 const history = require("connect-history-api-fallback");
 const serveStatic = require("serve-static");
 const fileUpload = require("express-fileupload");

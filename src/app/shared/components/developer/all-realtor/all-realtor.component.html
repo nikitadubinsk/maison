@@ -8,10 +8,10 @@
   <tui-input class="tui-space_bottom-4" [(ngModel)]="search" icon="tuiIconSearch">
     Поиск по имени курьера
   </tui-input>
-  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error">
+  <tui-notification class="tui-space_top-4" *ngIf="error$ | async as error" status="error">
     {{error}}
   </tui-notification>
-  <tui-notification class="tui-space_top-4" *ngIf="success$ | async as success">
+  <tui-notification class="tui-space_top-4" *ngIf="success$ | async as success" status="success">
     {{success}}
   </tui-notification>
   <table>
