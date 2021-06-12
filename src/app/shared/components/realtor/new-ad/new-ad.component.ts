@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { TuiOrientation } from "@taiga-ui/core";
 import { AngularFileUploaderComponent } from "angular-file-uploader";
 import { Subject } from "rxjs";
 import { RealtorService } from "src/app/shared/services/realtor.service";
@@ -13,10 +14,14 @@ import { environment } from "src/environments/environment";
 export class NewAdComponent implements OnInit {
   newAd = new FormGroup({
     title: new FormControl("", [Validators.required]),
-    description: new FormControl("", [Validators.required]),
+    description: new FormControl("", [
+      Validators.required,
+      Validators.maxLength(100)
+    ]),
     address: new FormControl("", [Validators.required]),
     size: new FormControl("", [Validators.required]),
     floor: new FormControl("", [Validators.required]),
+    maxFloor: new FormControl("", [Validators.required]),
     type_apartament: new FormControl("", [Validators.required]),
     type_ad: new FormControl("", [Validators.required]),
     conveniences: new FormControl(),
@@ -39,7 +44,8 @@ export class NewAdComponent implements OnInit {
     "Посудомоечная машина",
     "Телефон",
     "Душевая кабина",
-    "Кондиционер"
+    "Кондиционер",
+    "Умный дом"
   ];
   filename = "";
   loading = false;
@@ -66,11 +72,15 @@ export class NewAdComponent implements OnInit {
     },
     theme: "dragNDrop"
   };
+  orientation: any;
 
   constructor(private realtorService: RealtorService) {}
 
   ngOnInit(): void {
     this.fileUpload1?.resetFileUpload();
+    document.body.clientWidth > 850
+      ? (this.orientation = TuiOrientation.Horizontal)
+      : (this.orientation = TuiOrientation.Vertical);
   }
 
   fileUpload(event: any) {

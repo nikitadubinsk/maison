@@ -110,7 +110,11 @@ const Ads = sequelize.define("Ads", {
     allowNull: true
   },
   floor: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  maxFloor: {
+    type: Sequelize.STRING,
     allowNull: true
   },
   type_apartament: {
@@ -667,7 +671,7 @@ app.post("/api/upload-photo/", async (req, res) => {
     } else {
       let photo = req.files.file0;
       let name = uniqueFilename("") + "." + photo.name.split(".")[1];
-      photo.mv("uploads/" + name);
+      photo.mv("server/uploads/" + name);
       res.send({
         status: true,
         message: "Файл успешно загружен",
@@ -683,7 +687,7 @@ app.post("/api/upload-photo/", async (req, res) => {
 
 //Получение полного пути файла
 app.get("/api/photo/:filename", (req, res) => {
-  res.sendFile(path.join(__dirname, "uploads", req.params.filename));
+  res.sendFile(path.join(__dirname, "server/uploads", req.params.filename));
 });
 
 app.post("/api/realtor/find", async (req, res) => {
@@ -748,6 +752,7 @@ app.post("/api/realtor/newAd", async (req, res) => {
       description: req.body.description,
       address: req.body.address,
       size: req.body.size,
+      maxFloor: req.body.maxFloor,
       floor: req.body.floor,
       type_apartament: req.body.type_apartament,
       type_ad: req.body.type_ad,
@@ -810,7 +815,7 @@ app.get("/api/realtor/ads/:id", async (req, res) => {
 app.use(history());
 
 sequelize
-  //.sync({ force: true })
+  //server.config.js.sync({ force: true })
   .sync()
   .then(async () => {
     app.listen(PORT, () => {
