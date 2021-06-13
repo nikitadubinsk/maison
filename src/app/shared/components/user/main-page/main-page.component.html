@@ -17,9 +17,10 @@
       <tui-select formControlName="type_apartament" class="tui-group__inherit-item">Тип недвижимости
         <tui-data-list-wrapper *tuiDataList [items]="type_apartament"></tui-data-list-wrapper>
       </tui-select>
-      <tui-input class="tui-group__inherit-item" formControlName="size" tuiTextfieldAutocomplete="size">
+      <tui-input-number class="tui-group__inherit-item" formControlName="size" tuiTextfieldAutocomplete="size"
+        [postfix]="'м²' | tuiCurrency">
         Площадь недвижимости
-      </tui-input>
+      </tui-input-number>
       <tui-input-number formControlName="priceFrom" class="tui-group__inherit-item" [postfix]="'RUB' | tuiCurrency">
         Сумма от
       </tui-input-number>
@@ -67,6 +68,23 @@
 
 <section class="block">
   <h3 class="tui-text_h3 tui-space_bottom-4">Почему именно Maison?</h3>
+  <p class="tui-text_body-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error obcaecati labore porro
+    nobis, alias at, officia voluptatem voluptatum sapiente molestiae aspernatur harum! Pariatur cupiditate vitae eius.
+    Fugit deserunt perspiciatis cupiditate.
+    Deserunt sed necessitatibus a dolor, atque quidem quasi minus hic cumque reprehenderit distinctio quae, asperiores
+    unde? Quod possimus doloremque laudantium asperiores, dolorum maiores ipsum assumenda pariatur, culpa voluptatem
+    quis rem!
+    Mollitia incidunt earum repellendus dolorem hic quod sed porro aspernatur nisi natus sapiente labore iusto fugit
+    quae aut animi molestiae quibusdam, ipsam accusamus. Recusandae eligendi fugit deleniti blanditiis asperiores
+    voluptate!
+    Dolore illo cumque ea repellendus fugiat excepturi accusamus, cum odio itaque accusantium! Nesciunt, voluptatem
+    aspernatur atque placeat nam ex vitae, iusto minus quisquam minima accusantium molestiae ea dolores non cum.
+    Maiores accusantium facere, sed quas incidunt harum quos iure repellendus perferendis. Deserunt ab cupiditate fugit
+    quidem amet ipsa, dolorem soluta doloribus reprehenderit harum doloremque quos illum odit voluptatem sit sunt?</p>
+</section>
+
+<section class="block">
+  <h3 class="tui-text_h3 tui-space_bottom-4">Наши новости</h3>
   <p class="tui-text_body-s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error obcaecati labore porro
     nobis, alias at, officia voluptatem voluptatum sapiente molestiae aspernatur harum! Pariatur cupiditate vitae eius.
     Fugit deserunt perspiciatis cupiditate.

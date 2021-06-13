@@ -16,7 +16,7 @@ export class NewAdComponent implements OnInit {
     title: new FormControl("", [Validators.required]),
     description: new FormControl("", [
       Validators.required,
-      Validators.maxLength(100)
+      Validators.maxLength(250)
     ]),
     address: new FormControl("", [Validators.required]),
     size: new FormControl("", [Validators.required]),
@@ -74,6 +74,8 @@ export class NewAdComponent implements OnInit {
   };
   orientation: any;
 
+  filenamedone: string = "";
+
   constructor(private realtorService: RealtorService) {}
 
   ngOnInit(): void {
@@ -85,6 +87,8 @@ export class NewAdComponent implements OnInit {
 
   fileUpload(event: any) {
     this.filename = event.body.filename;
+    this.filenamedone = environment.urlPicture + this.filename;
+    console.log(this.filenamedone);
   }
 
   createAd() {

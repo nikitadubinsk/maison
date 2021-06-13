@@ -687,7 +687,7 @@ app.post("/api/upload-photo/", async (req, res) => {
 
 //Получение полного пути файла
 app.get("/api/photo/:filename", (req, res) => {
-  res.sendFile(path.join(__dirname, "server/uploads", req.params.filename));
+  res.sendFile(path.join(__dirname, "uploads", req.params.filename));
 });
 
 app.post("/api/realtor/find", async (req, res) => {

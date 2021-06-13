@@ -15,7 +15,7 @@
     <tui-input class="tui-space_top-2" formControlName="title" tuiTextfieldAutocomplete="title">
       Название объявления
     </tui-input>
-    <tui-text-area formControlName="description" [expandable]="true" [rows]="15" class="tui-space_top-2">Краткое
+    <tui-text-area formControlName="description" [expandable]="true" [rows]="5" class="tui-space_top-2">Краткое
       описание
       объявления</tui-text-area>
     <tui-input class="tui-space_top-2" formControlName="address" tuiTextfieldAutocomplete="address">
@@ -45,11 +45,18 @@
     <tui-input-number formControlName="price" class="tui-space_top-2" [postfix]="'RUB' | tuiCurrency">
       Сумма
     </tui-input-number>
-    <div class="tui-space_top-4">
+    <div class="tui-space_top-4 photoBox">
       <angular-file-uploader #fileUpload1 [config]="afuConfig" (ApiResponse)="fileUpload($event)">
       </angular-file-uploader>
+      <div class="block" *ngIf="filename">
+        <tui-island class="success" [hoverable]="true">
+          <tui-marker-icon src="tuiIconCheck" mode="success" class="tui-space_bottom-4" size="m"></tui-marker-icon>
+          <p class="tui-text_h6">
+            Вы успешно добавили фотографию
+          </p>
+        </tui-island>
+      </div>
     </div>
-    <img src="filename" *ngIf="filename">
     <button tuiButton type="button" class="tui-space_top-2 maxWidth" (click)="createAd()">
       Добавить новое объявление
     </button>

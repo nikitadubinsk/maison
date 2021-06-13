@@ -1,4 +1,25 @@
-img {
-  width: 70px;
-  background: var(--tui-positive);
+.success {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.photoBox {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .photoBox {
+    flex-direction: column;
+    .block {
+      margin-top: 2%;
+    }
+  }
+  .group {
+    width: 100%;
+  }
 }
